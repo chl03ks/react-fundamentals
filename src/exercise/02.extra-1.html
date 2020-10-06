@@ -1,18 +1,20 @@
 <!-- Intro to raw React APIs -->
-<!-- http://localhost:3000/isolated/exercise/02.html -->
+<!-- 💯 nesting elements -->
 
 <body>
   <div id="root"></div>
-
   <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
-
   <script type="module">
     const rootElement = document.getElementById('root')
-    const reactElement = React.createElement('div', {
+    const element = React.createElement('div', {
       className: 'container',
-      children: 'Hello World',
+      children: [
+        React.createElement('span', null, 'Hello'),
+        ' ',
+        React.createElement('span', null, 'World'),
+      ],
     })
-    ReactDOM.render(reactElement, rootElement)
+    ReactDOM.render(element, rootElement)
   </script>
 </body>
