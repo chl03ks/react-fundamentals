@@ -9,7 +9,10 @@
 
   <script type="text/babel">
     // 🐨 re-implement this using JSX!
-    const element = <div className="container">Hello World</div>
+    const children = 'Hellow World'
+    const className = 'container'
+    const props = {children, className}
+    const element = <div {...props}></div>
     ReactDOM.render(element, document.getElementById('root'))
   </script>
 </body>
