@@ -1,5 +1,5 @@
 <!-- Using JSX -->
-<!-- http://localhost:3000/isolated/exercise/03.html -->
+<!-- http://localhost:3000/isolated/exercise/03.extra-2.html -->
 
 <body>
   <div id="root"></div>
@@ -8,11 +8,10 @@
   <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
 
   <script type="text/babel">
-    // 🐨 re-implement this using JSX!
     const children = 'Hellow World'
     const className = 'container'
     const props = {children, className}
-    const element = <div {...props}></div>
+    const element = <div {...props} />
     ReactDOM.render(element, document.getElementById('root'))
   </script>
 </body>
