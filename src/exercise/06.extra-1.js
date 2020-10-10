@@ -1,12 +1,14 @@
 // Basic Forms
 // http://localhost:3000/isolated/exercise/06.js
 
-import React from 'react'
+import React, {useRef} from 'react'
 
 function UsernameForm({onSubmitUsername}) {
+  const usernameInput = useRef(null)
+
   const handleSubmit = event => {
     event.preventDefault()
-    const {value} = event.target.elements.username
+    const value = usernameInput.current.value
     onSubmitUsername(value)
   }
 
@@ -14,7 +16,7 @@ function UsernameForm({onSubmitUsername}) {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
-        <input type="text" id="username" />
+        <input ref={usernameInput} type="text" id="username" />
       </div>
       <button type="submit">Submit</button>
     </form>
